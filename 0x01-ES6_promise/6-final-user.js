@@ -13,7 +13,7 @@ export default async function handleProfileSignup(firstName, lastName, fileName)
     return [
       {
         status: userResult.status,
-        value: userResult.status === 'fulfilled' ? userResult.value : userResult.reason,
+        value: userResult.status === 'fulfilled' ? userResult.value : `${userResult.reason}`,
       },
       {
         status: photoResult.status,
