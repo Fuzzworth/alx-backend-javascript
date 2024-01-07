@@ -10,6 +10,6 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
       return [resultSUU, resultUP];
     })
     .catch((error) => {
-      return error;
+      return [error];
     });
 }
