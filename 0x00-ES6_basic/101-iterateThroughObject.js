@@ -4,7 +4,7 @@ export default function iterateThroughObject(reportWithIterator) {
   let employee = reportWithIterator.next();
   while (!employee.done)
   {
-    process.stdout.write(employee.value);
+    process.stdout.write(employee.value ? employee.value: "");
     employee = reportWithIterator.next();
     if (!employee.done)
       process.stdout.write(" | ");
