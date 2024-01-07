@@ -8,5 +8,8 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
   return Promise.all([signUpUser(firstName, lastName), uploadPhoto(fileName)])
     .then(([resultSUU, resultUP]) => {
       return [resultSUU, resultUP];
+    })
+    .catch((error) => {
+      return error;
     });
 }
