@@ -9,5 +9,6 @@ for (const [department, employees] of Object.entries(report)) {
     }
   }
 }
-return emp[Symbol.iterator]();
+let iterEmp = emp[Symbol.iterator]();
+return iterEmp;
 }
