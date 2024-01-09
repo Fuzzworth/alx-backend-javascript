@@ -2,6 +2,9 @@
 /* eslint-disable */
 export default class Building {
   constructor(sqft) {
+    if (new.target !== Building) {
+      this.evacuationWarningMessage();
+    }
     if (typeof sqft !== 'number')
       throw new TypeError('SQFT must be a number');
     this._sqft = sqft;
