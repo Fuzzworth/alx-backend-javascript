@@ -36,6 +36,8 @@ function countStudents(path) {
       console.log(`Number of students in ${key}: ${numberOfStudents}. List: ${listOfNames}`);
     }
   }
+	  
+});
 }
 
 module.exports = countStudents;
