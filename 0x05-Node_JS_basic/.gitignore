@@ -3,3 +3,7 @@
 # Ignore compiled files or local configuration specific to your development environment
 .venv/
 *.pyc
+babel.config.js
+node_modules
+node_modules/*
+package.json
