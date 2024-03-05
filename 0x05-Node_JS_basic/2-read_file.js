@@ -35,7 +35,6 @@ function countStudents(path) {
       const listOfNames = value.join(', ');
       console.log(`Number of students in ${key}: ${numberOfStudents}. List: ${listOfNames}`);
     }
-  });
   }
 }
 
