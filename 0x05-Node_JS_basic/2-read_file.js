@@ -4,8 +4,6 @@ function csvJSON(csv){
 
   var lines=csv.split("\n");
 
-	console.log(lines);
-
   var result = [];
 
   // NOTE: If your columns contain commas in their values, you'll need
@@ -37,7 +35,7 @@ function countStudents(path){
 			throw new Error("Cannot load the database");
 		}
 		let numberOfStudents = 0;
-		csvJSON(data);
+		console.log(csvJSON(data));
 	});
 }
 
