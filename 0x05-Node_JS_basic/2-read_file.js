@@ -17,9 +17,9 @@ function csvJSON(csv) {
 
       for (let j = 0; j < headers.length; j += 1) {
         obj[headers[j]] = currentline[j];
-        if (j == 3 && currentline[j] in fields) {
+        if (j === 3 && currentline[j] in fields) {
           fields[currentline[j]].push(currentline[0]);
-        } else if (j == 3 && !(currentline[j] in fields)) {
+        } else if (j === 3 && !(currentline[j] in fields)) {
           fields[currentline[j]] = [currentline[0]];
         }
       }
