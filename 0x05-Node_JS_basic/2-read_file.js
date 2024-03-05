@@ -6,7 +6,9 @@ function countStudents(path){
 			throw new Error("Cannot load the database");
 		}
 		let numberOfStudents = 0;
-		console.log(data);
+		for (const line of data) {
+			console.log(line);
+		}
 	});
 }
 
