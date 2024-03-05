@@ -24,6 +24,8 @@ function csvJSON(csv){
 		}
 	}
 
+	console.log(`Number of students: ${numberOfStudents}`);
+
 	return JSON.stringify(result); //JSON
 }
 
