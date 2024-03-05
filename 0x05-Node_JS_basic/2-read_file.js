@@ -7,6 +7,7 @@ function csvJSON(csv){
 	let lines=csv.split("\n");
 
 	let result = [];
+	let fields = {};
 
 	let headers=lines[0].split(",");
 
@@ -18,6 +19,11 @@ function csvJSON(csv){
 
 			for(let j=0;j<headers.length;j++){
 				obj[headers[j]] = currentline[j];
+				if (j == 3 && currentline[j] in fields) {
+					fields[currentline[j]].push(currentline[0]);
+				} else if(j == 3 && !(currentline[j] in fields)) {
+					fields[currentline[j]] = [currentline[0]];
+				}
 			}
 			result.push(obj);
 			numberOfStudents++;
@@ -25,6 +31,11 @@ function csvJSON(csv){
 	}
 
 	console.log(`Number of students: ${numberOfStudents}`);
+	for (const [key, value] of Object.entries(fields)) {
+		const numberOfStudents = value.lenght;
+		const listOfNames = value.join(",");
+		console.log(`Number of students in ${key}: ${numberOfStudents}. List: ${listOfNames}`);
+	}
 
 	return JSON.stringify(result); //JSON
 }
