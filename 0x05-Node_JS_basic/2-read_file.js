@@ -1,7 +1,11 @@
 const fs = require('fs');
 
-function csvJSON(csv) {
-  let numberOfStudents = 0;
+function countStudents(path) {
+  fs.readFile(path, 'utf8', (err, data) => {
+    if (err) {
+      throw new Error('Cannot load the database');
+    }
+    let numberOfStudents = 0;
 
   const lines = csv.split('\n');
 
@@ -30,14 +34,7 @@ function csvJSON(csv) {
     const listOfNames = value.join(', ');
     console.log(`Number of students in ${key}: ${numberOfStudents}. List: ${listOfNames}`);
   }
-}
 
-function countStudents(path) {
-  fs.readFile(path, 'utf8', (err, data) => {
-    if (err) {
-      throw new Error('Cannot load the database');
-    }
-    csvJSON(data);
   });
 }
 
