@@ -37,7 +37,6 @@ function csvJSON(csv){
 		console.log(`Number of students in ${key}: ${numberOfStudents}. List: ${listOfNames}`);
 	}
 
-	return JSON.stringify(result); //JSON
 }
 
 function countStudents(path){
@@ -46,7 +45,7 @@ function countStudents(path){
 			throw new Error("Cannot load the database");
 		}
 		let numberOfStudents = 0;
-		console.log(csvJSON(data));
+		csvJSON(data);
 	});
 }
 
