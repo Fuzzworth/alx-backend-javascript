@@ -28,13 +28,15 @@ function countStudents(path) {
       }
     }
 
-    console.log(`Number of students: ${numberOfStudents}`);
     if (numberOfStudents > 0) {
+      console.log(`Number of students: ${numberOfStudents}`);
       for (const [key, value] of Object.entries(fields)) {
         const numberOfStudents = value.length;
         const listOfNames = value.join(', ');
         console.log(`Number of students in ${key}: ${numberOfStudents}. List: ${listOfNames}`);
       }
+    } else {
+      throw new Error('Cannot load the database');
     }
   });
 }
