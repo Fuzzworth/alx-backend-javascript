@@ -32,7 +32,7 @@ function csvJSON(csv){
 
 	console.log(`Number of students: ${numberOfStudents}`);
 	for (const [key, value] of Object.entries(fields)) {
-		const numberOfStudents = value.lenght;
+		const numberOfStudents = value.lenght();
 		const listOfNames = value.join(", ");
 		console.log(`Number of students in ${key}: ${numberOfStudents}. List: ${listOfNames}`);
 	}
