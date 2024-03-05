@@ -4,6 +4,8 @@ function csvJSON(csv){
 
   var lines=csv.split("\n");
 
+	console.log(lines);
+
   var result = [];
 
   // NOTE: If your columns contain commas in their values, you'll need
@@ -38,4 +40,5 @@ function countStudents(path){
 		csvJSON(data);
 	});
 }
+
 module.exports = countStudents;
