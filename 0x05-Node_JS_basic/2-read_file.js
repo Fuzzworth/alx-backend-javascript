@@ -30,14 +30,13 @@ function countStudents(path) {
 
     console.log(`Number of students: ${numberOfStudents}`);
     if (numberOfStudents > 0) {
-    for (const [key, value] of Object.entries(fields)) {
-      const numberOfStudents = value.length;
-      const listOfNames = value.join(', ');
-      console.log(`Number of students in ${key}: ${numberOfStudents}. List: ${listOfNames}`);
+      for (const [key, value] of Object.entries(fields)) {
+        const numberOfStudents = value.length;
+        const listOfNames = value.join(', ');
+        console.log(`Number of students in ${key}: ${numberOfStudents}. List: ${listOfNames}`);
+      }
     }
-  }
-	  
-});
+  });
 }
 
 module.exports = countStudents;
