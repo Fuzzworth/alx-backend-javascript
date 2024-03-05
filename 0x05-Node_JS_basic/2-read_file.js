@@ -36,7 +36,7 @@ function csvJSON(csv){
 		const listOfNames = value.join(", ");
 		console.log(`Number of students in ${key}: ${numberOfStudents}. List: ${listOfNames}`);
 	}
-
+	console.log("Done!");
 }
 
 function countStudents(path){
