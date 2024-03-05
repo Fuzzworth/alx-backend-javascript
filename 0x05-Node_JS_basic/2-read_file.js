@@ -41,7 +41,6 @@ function countStudents(path) {
     if (err) {
       throw new Error('Cannot load the database');
     }
-    const numberOfStudents = 0;
     csvJSON(data);
   });
 }
