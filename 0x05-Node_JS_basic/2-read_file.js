@@ -9,3 +9,5 @@ function countStudents(path){
 		console.log(data);
 	});
 }
+
+module.exports = countStudents;
