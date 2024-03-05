@@ -5,25 +5,21 @@ function csvJSON(csv) {
 
   const lines = csv.split('\n');
 
-  const result = [];
   const fields = {};
 
   const headers = lines[0].split(',');
 
   for (let i = 1; i < lines.length; i += 1) {
     if (lines[i]) {
-      const obj = {};
       const currentline = lines[i].split(',');
 
       for (let j = 0; j < headers.length; j += 1) {
-        obj[headers[j]] = currentline[j];
         if (j === 3 && currentline[j] in fields) {
           fields[currentline[j]].push(currentline[0]);
         } else if (j === 3 && !(currentline[j] in fields)) {
           fields[currentline[j]] = [currentline[0]];
         }
       }
-      result.push(obj);
       numberOfStudents += 1;
     }
   }
