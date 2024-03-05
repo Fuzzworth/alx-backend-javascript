@@ -2,31 +2,29 @@ const fs = require('fs');
 
 function csvJSON(csv){
 
-  var lines=csv.split("\n");
+	let numberOfStudents = 0;
 
-  var result = [];
+	let lines=csv.split("\n");
 
-  // NOTE: If your columns contain commas in their values, you'll need
-  // to deal with those before doing the next step
-  // (you might convert them to &&& or something, then covert them back later)
-  // jsfiddle showing the issue https://jsfiddle.net/
-  var headers=lines[0].split(",");
+	let result = [];
 
-  for(var i=1;i<lines.length;i++){
+	let headers=lines[0].split(",");
 
-      var obj = {};
-      var currentline=lines[i].split(",");
+	for(let i=1;i<lines.length;i++){
 
-      for(var j=0;j<headers.length;j++){
-          obj[headers[j]] = currentline[j];
-      }
+		if (lines[i]) {
+			let obj = {};
+			let currentline=lines[i].split(",");
 
-      result.push(obj);
+			for(let j=0;j<headers.length;j++){
+				obj[headers[j]] = currentline[j];
+			}
+			result.push(obj);
+			numberOfStudents++;
+		}
+	}
 
-  }
-
-  //return result; //JavaScript object
-  return JSON.stringify(result); //JSON
+	return JSON.stringify(result); //JSON
 }
 
 function countStudents(path){
