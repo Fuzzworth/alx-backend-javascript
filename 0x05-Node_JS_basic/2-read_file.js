@@ -10,12 +10,12 @@ function csvJSON(csv) {
 
   const headers = lines[0].split(',');
 
-  for (let i = 1; i < lines.length; i++) {
+  for (let i = 1; i < lines.length; i += 1) {
     if (lines[i]) {
       const obj = {};
       const currentline = lines[i].split(',');
 
-      for (let j = 0; j < headers.length; j++) {
+      for (let j = 0; j < headers.length; j += 1) {
         obj[headers[j]] = currentline[j];
         if (j == 3 && currentline[j] in fields) {
           fields[currentline[j]].push(currentline[0]);
